@@ -8,8 +8,7 @@ public class Task2 {
         Scanner in = new Scanner(System.in);                                          //Инициализируем сканнер
         double byteInput = in.nextDouble();                                           //Присвоим входные данные
 
-
-        convert(byteInput);
+        convert(byteInput);                                                           //Вызываем метод и выводим ответ
     }
 
     public static void convert(double byteInput){                                     //Метод для конвертации байтов
