@@ -7,6 +7,7 @@ public class Task2 {
 
         Scanner in = new Scanner(System.in);                                          //Инициализируем сканнер
         double byteInput = in.nextDouble();                                           //Присвоим входные данные
+        in.close();
 
         convert(byteInput);                                                           //Вызываем метод и выводим ответ
     }
