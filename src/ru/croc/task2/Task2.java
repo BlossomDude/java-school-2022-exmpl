@@ -9,7 +9,7 @@ public class Task2 {
         double byteInput = in.nextDouble();                                           //Присвоим входные данные
         in.close();
 
-        convert(byteInput);                                                           //Вызываем метод и выводим ответ
+        convert(byteInput);
     }
 
     public static void convert(double byteInput){                                     //Метод для конвертации байтов
