@@ -1,6 +1,9 @@
 package ru.croc.task3;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.Scanner;
+
+import static java.util.Collections.swap;
 
 public class Task3 {
     public static void main(String[] args) {
@@ -31,27 +34,22 @@ public class Task3 {
     }
 
     public static int[] sort(int[] array){
+        int exchange = 0;
 
-        int min = array[0];                                              //Переменная мин. числа
-        int max = array[array.length-1];                                 //Переменная макс. числа
-        int exchange = 0;                                                //Переменная для размена
+        for (int left = 0; left < array.length; left++) {
+            int min = left;
+            for (int i = left; i < array.length; i++) {
+                if (array[i] < array[min]) {
+                    min = i;
+                }
+            }
+            exchange = array[left];
+            array[left] = array[min];
+            array[min] = exchange;
 
-        for (int i = 1; i < array.length; i++){
-            if(min > array[i]) {
-                exchange = min;
-                min = array[i];
-                array[i] = exchange;                                     //Цикл нахождения мин. и макс. чисел
-            }
-            if(max < array[i]){
-                exchange = max;
-                max = array[i];
-                array[i] = exchange;
-            }
         }
 
-        array[0] = min;                                                  //Присваиваем массиву значения
-        array[array.length-1] = max;
-
+;
         return array;
     }
 }
