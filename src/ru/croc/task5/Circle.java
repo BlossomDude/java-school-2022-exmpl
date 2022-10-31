@@ -5,12 +5,13 @@ class Circle extends Figure{
     int Y0;
     int R;
 
-    public String toString() {
-        return "C ("+X0+", "+Y0+"), "+R;
-    }
-    public Circle(int x0, int y0, int r){
-        X0 = x0;
-        Y0 = y0;
+    @Override
+    public String toString() { return "C (" + X0 + ", " + Y0 + "), " + R;}
+
+    public Circle(int x, int y, int r){
+        X0 = x;
+        Y0 = y;
         R = r;
     }
+
 }
