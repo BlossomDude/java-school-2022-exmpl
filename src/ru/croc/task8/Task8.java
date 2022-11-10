@@ -5,16 +5,19 @@ import java.util.Scanner;
 
 public class Task8 {
     public static void main(String[] args) throws FileNotFoundException {
-        int count = 0;                                                                                             //count
-        File dir =new File("C:\\Program Files\\IdeaProjects\\LearnJava\\src\\ru\\croc\\task8\\text");     //путь
-        try{
-            Scanner s = new Scanner(new FileReader(dir));                                                          //сканнер
-            while (s.hasNextLine()) count += s.nextLine().split("\s+").length;                               //считаем слова
+        int count = 0;
+
+        File dir =new File("C:\\Program Files\\IdeaProjects\\LearnJava\\src\\ru\\croc\\task8\\text");
+        try(Scanner s = new Scanner(new FileReader(dir));){
+            while (s.hasNext()){
+                String str = s.nextLine();
+                if(str != null) count += str.split("\s+\n").length;
+            }
         }
-        catch(FileNotFoundException e){                                                                            //обрабатываем
+        catch(FileNotFoundException e){
             System.out.println(e.getMessage());
         }
-
-        System.out.println(count);                                                                                 //выводим
+        System.out.println(count);
+        System.exit(1);
     }
 }
